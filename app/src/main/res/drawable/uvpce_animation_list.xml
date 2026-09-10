@@ -5,15 +5,15 @@
 
     <item
         android:drawable="@drawable/uvpce_logo_1"
-        android:duration="200" />
+        android:duration="100" />
 
     <item
         android:drawable="@drawable/uvpce_logo_2"
-        android:duration="200" />
+        android:duration="100" />
 
     <item
         android:drawable="@drawable/uvpce_logo_3"
-        android:duration="100" />
+        android:duration="200" />
 
     <item
         android:drawable="@drawable/uvpce_logo_4"
@@ -21,7 +21,7 @@
 
     <item
         android:drawable="@drawable/uvpce_logo_5"
-        android:duration="100" />
+        android:duration="200" />
 
     <item
         android:drawable="@drawable/uvpce_logo_6"
