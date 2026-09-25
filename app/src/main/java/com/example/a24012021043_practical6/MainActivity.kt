@@ -2,18 +2,14 @@ package com.example.a24012021043_practical6
 
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
-import android.util.Log
-import android.view.animation.Animation
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class
-MainActivity : AppCompatActivity() , Animation.AnimationListener {
-    lateinit var clockAnimation: AnimationDrawable
-    lateinit var heartAnimation: AnimationDrawable
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,29 +19,13 @@ MainActivity : AppCompatActivity() , Animation.AnimationListener {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            clockAnimation = findViewById<ImageView>(R.id.img1).background as
-                    AnimationDrawable
-            heartAnimation = findViewById<ImageView>(R.id.img2).background as
-                    AnimationDrawable
-            clockAnimation.start()
-            heartAnimation.start()
-        } else {
-            clockAnimation.stop()
-            heartAnimation.stop()
-        }
-    }
-    override fun onAnimationStart(animation: Animation?) {
-        Log.d("AnimationStart", "Animation started")
-    }
-    override fun onAnimationEnd(animation: Animation?) {
-        Log.d("AnimationEnd", "Animation ended")
-        clockAnimation.start()
-    }
-    override fun onAnimationRepeat(animation: Animation?) {
-        Log.d("AnimationRepeat", "Animation has repeated")
+        val alarmImage = findViewById<ImageView>(R.id.alarmImage)
+
+        val alarmAnimation = alarmImage.background as AnimationDrawable
+        alarmAnimation.start()
+
+        val heart = findViewById<TextView>(R.id.txtHeart)
+        val heartAnimation = heart.background as AnimationDrawable
+        heartAnimation.start()
     }
 }
